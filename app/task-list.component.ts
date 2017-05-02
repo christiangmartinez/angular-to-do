@@ -44,7 +44,7 @@ export class TaskListComponent {
     }
   }
 
-  ediButtonHasBeenClicked(taskToEdit: Task) {
+  editButtonHasBeenClicked(taskToEdit: Task) {
     this.clickSender.emit(taskToEdit);
   }
 
