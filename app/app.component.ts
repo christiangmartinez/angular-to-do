@@ -5,12 +5,20 @@ import { Task } from './task.model';
   selector: 'app-root',
   template: `
      <div class="container">
-      <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
-      <h3>{{currentFocus}}</h3>
-      <task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></task-list>
-      <hr>
-      <edit-task [childSelectedTask]="selectedTask" (doneButtonClickedSender)="finishedEditing()"></edit-task>
-      <new-task (newTaskSender)="addTask($event)"></new-task>
+      <div class="page-header">
+        <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6 well">
+          <h3>{{currentFocus}}</h3>
+          <task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></task-list>
+          <hr>
+          <edit-task [childSelectedTask]="selectedTask" (doneButtonClickedSender)="finishedEditing()"></edit-task>
+        </div>
+        <div class="col-md-6">
+          <new-task (newTaskSender)="addTask($event)"></new-task>
+        </div>
+      </div>
     </div>
   `
 })
